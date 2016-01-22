@@ -32,12 +32,12 @@ class BaseModel extends Eloquent {
 
     /**
      * Path to uploaded files.
-     * NOTE: When uploading files set $fileSystem = true!
+     * NOTE: When uploading files set $local = true!
      *
-     * @param  bool $fileSystem If true, return a path of the file system (e. g. "C:\Contentify\public/uploads/games/")
+     * @param  bool $local If true, return a local path (e. g. "C:\Contentify\public/uploads/games/")
      * @return string
      */
-    public function uploadPath($fileSystem = false)
+    public function uploadPath($local = false)
     {
         $class = class_basename(get_class($this));
 
@@ -46,14 +46,10 @@ class BaseModel extends Eloquent {
             $dir = strtolower(str_plural($class));
         }
 
-        if ($fileSystem) {
-            $base = public_path();            
+        if ($local) {
+            $base = public_path();
         } else {
-            $base = asset('');
-            
-            if (endsWith($base, '/')) {
-                $base = substr($base, 0, -1);
-            }
+            $base = url('/');
         }
 
         return $base.'/uploads/'.$dir.'/';

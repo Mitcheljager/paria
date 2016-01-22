@@ -1,5 +1,5 @@
 <?php namespace App\Modules\Friends;
-
+
 use BaseModel;
 
 /**
@@ -19,27 +19,22 @@ class Friendship extends BaseModel {
     ];
 
     /**
-     * Query scope that returns only the (confirmed) friendships of two users
+     * Query scope that returns only the friendships of two users
      * 
      * @param  Builder      $query       The query builder object
      * @param  int          $friendOneId The ID of the first user
      * @param  int          $friendTwoId The ID of the second user
-     * @param  boolean      $confirmed   Only show confirmed friendships? Default = true
      * @return Builder
      */
-    public function scopeAreFriends($query, $friendOneId, $friendTwoId, $confirmed = true)
+    public function scopeAreFriends($query, $friendOneId, $friendTwoId)
     {
-        if ($confirmed) {
-            $query->whereConfirmed(1);
-        }
-
         return $query->where(function($query) use ($friendOneId, $friendTwoId)
         {
             $query->whereSenderId($friendOneId)
                 ->whereReceiverId($friendTwoId);
         })->orWhere(function($query) use ($friendOneId, $friendTwoId)
         {
-            $query->whereReceiverId($friendOneId) // Receiver <-> Sender
+            $query->whereReceiverId($friendOneId)
                 ->whereSenderId($friendTwoId);
         });
     }
@@ -49,19 +44,11 @@ class Friendship extends BaseModel {
      * 
      * @param  Builder  $query  The query builder object
      * @param  int      $userId The ID of the user
-    * @param  boolean      $confirmed   Only show confirmed friendships? Default = true
      * @return Builder
      */
-    public function scopeFriendsOf($query, $userId, $confirmed = true)
+    public function scopeFriendsOf($query, $userId)
     {
-        if ($confirmed) {
-            $query->whereConfirmed(1);
-        }
-
-        return $query->where(function($query) use ($userId)
-        {
-            $query->whereSenderId($userId)->orWhere('receiver_id', $userId);
-        });
+        return $query->whereSenderId($userId)->orWhere('receiver_id', $userId);
     }
 
 }

@@ -21,8 +21,7 @@ class AdminTeamsController extends BackController {
     {
         $this->indexPage([
             'tableHead' => [
-                trans('app.id')         => 'id',
-                trans('app.published')  => 'published', 
+                trans('app.id')         => 'id', 
                 trans('app.title')      => 'title',
                 trans('app.category')   => 'teamcat_id'
             ],
@@ -32,7 +31,6 @@ class AdminTeamsController extends BackController {
 
                 return [
                     $team->id,
-                    raw($team->published ? HTML::fontIcon('check') : null),
                     raw(Hover::pull().HTML::link('teams/'.$team->id.'/'.$team->slug, $team->title)),
                     $team->teamcat->title,
                 ];            

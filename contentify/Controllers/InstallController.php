@@ -448,15 +448,12 @@ class InstallController extends Controller {
         {
             $table->string('url')->nullable();
             $table->string('image')->nullable();
-            $table->integer('position')->default(0);
-            $table->boolean('published')->default(false);
         }, ['slidecat_id'], ['slug']);
 
                
         $this->create('tournaments', function($table)
         {
             $table->string('short', 6)->nullable();
-            $table->string('url')->nullable();
             $table->string('icon')->nullable();
         },  [], ['slug']);
         
@@ -754,19 +751,17 @@ information about your stored data, and possibly entitlement to correction, bloc
         ("FIFA", "FIFA", "default/fifa.gif", 1, 1),
         ("Minecraft", "MS", "default/mc.png", 1, 1)');
 
-        DB::insert('INSERT INTO maps(title, image, game_id, creator_id, updater_id) VALUES
-        ("Unknown", "unknown.jpg", NULL, 1, 1),
-        ("de_dust", "cs_dust.jpg", 1, 1, 1),
-        ("de_dust2", "cs_dust2.jpg", 1, 1, 1),
-        ("de_inferno", "cs_inferno.jpg", 1, 1, 1),
-        ("de_train", "cs_train.jpg", 1, 1, 1),
-        ("de_cbble", "cs_cbble.jpg",1, 1, 1),
-        ("de_nuke", "cs_nuke.jpg",1, 1, 1),
-        ("de_cache", "cs_cache.jpg", 1, 1, 1),
-        ("de_mirage", "cs_mirage.jpg", 1, 1, 1),
-        ("de_season", "cs_season.jpg", 1, 1, 1),
-        ("de_overpass", "cs_overpass.jpg", 1, 1, 1)');
-
+        DB::insert('INSERT INTO maps(title, game_id, creator_id, updater_id) VALUES
+        ("Unknown", NULL, 1, 1),
+        ("de_dust", 1, 1, 1),
+        ("de_dust2", 1, 1, 1),
+        ("de_inferno", 1, 1, 1),
+        ("de_train", 1, 1, 1),
+        ("de_cbble", 1, 1, 1),
+        ("de_nuke", 1, 1, 1),
+        ("de_inferno", 1, 1, 1),
+        ("de_cache", 1, 1, 1),
+        ("de_mirage", 1, 1, 1)');
 
         DB::insert('INSERT INTO tournaments(title, short, creator_id, updater_id) VALUES
         ("Electronic Sports League", "ESL", 1, 1),

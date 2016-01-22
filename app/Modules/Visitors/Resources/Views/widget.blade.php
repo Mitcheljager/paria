@@ -1,16 +1,7 @@
-<div class="widget widget-visitors">
-    <ul class="list-unstyled">
-        <li>
-            <span>{!! trans('app.today') !!}:</span> {!! $today !!}
-        </li>
-        <li>
-            <span>{!! trans('app.yesterday') !!}:</span> {!! $yesterday !!}
-        </li>
-        <li>
-            <span>{!! trans('app.month') !!}:</span> {!! $month !!}
-        </li>
-        <li>
-            <span>{!! trans('app.total') !!}:</span> {!! $total !!}
-        </li>
-    </ul>
-</div>
+<span class="stats">
+    {{ trans('app.object_visitors') }}:
+    <span>{!! trans('app.today') !!}:</span> {!! $today !!}
+    <span>{!! trans('app.yesterday') !!}:</span> {!! $yesterday !!}
+    <span>{!! trans('app.month') !!}:</span> {!! $month !!}
+    <span>{!! trans('app.total') !!}:</span> {!! $total !!}
+</span>

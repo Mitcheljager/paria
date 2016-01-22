@@ -53,7 +53,6 @@ class AdminDiagController extends BackController {
             'Mail.pretend'              => (int) Config::get('mail.pretend'),
             'OPcache.installed'         => $opcacheExists,
             'OPcache.enabled'           => $opcacheEnabled,
-            'Xdebug.enabled'            => extension_loaded('xdebug') ? 1 : 0,
         ];
 
         /*

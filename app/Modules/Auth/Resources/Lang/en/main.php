@@ -22,8 +22,6 @@ return array(
     'register'          => 'Register',
     'registered'        => 'Registration successful!',
     'username_taken'    => 'Username already taken.',
-    'password_length'   => 'Your password must be at least 6 characters long.',
-    'register_twice'    => 'You are already registered.',
 
     /*
      * Restore password

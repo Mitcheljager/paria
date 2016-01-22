@@ -11,7 +11,7 @@
 
     {!! Form::smartTextarea('code', trans('app.code')) !!}
 
-    {!! Form::smartUrl() !!}
+    {!! Form::smartUrl('url', trans('app.url')) !!}
 
     {!! Form::smartImageFile('image', trans('app.image')) !!}
     

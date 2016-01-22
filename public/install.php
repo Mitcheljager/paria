@@ -59,7 +59,7 @@ class Tester {
      */
     public function checkExtensions()
     {
-        $extensions = array(
+        $extensions = [
             'mcrypt',
             'fileinfo',
             'pdo',
@@ -67,9 +67,9 @@ class Tester {
             'tokenizer',
             'openssl',
             'json',
-        );
+        ];
 
-        $results = array();
+        $results = [];
 
         foreach ($extensions as $extension) {
             $results[$extension] = extension_loaded($extension);
@@ -85,15 +85,15 @@ class Tester {
      */
     public function checkDirs()
     {
-        $dirs = array(
+        $dirs = [
             'storage',
             'bootstrap/cache',
             'public/uploads',
             'public/rss',
             'public/share',
-        );
+        ];
 
-        $results = array();
+        $results = [];
 
         foreach ($dirs as $dir) {
             $results[$dir] = is_writable(__DIR__.'/../'.$dir);

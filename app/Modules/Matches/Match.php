@@ -47,7 +47,6 @@ class Match extends BaseModel {
         'state'     => 'integer|min:0',
         'featured'  => 'boolean',
         'url'       => 'sometimes|url',
-        'broadcast' => 'sometimes|url',
     ];
 
     public static $relationsData = [

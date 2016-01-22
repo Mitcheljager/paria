@@ -12,7 +12,7 @@
             </div>
             <div class="name">
                 @if ($friend->isOnline())
-                    <span title="{{ trans('app.online') }}">{!! HTML::fontIcon('clock-o') !!}</span>
+                    {!! HTML::fontIcon('check-circle') !!}
                 @endif
                 {{ $friend->username }}
             </div>

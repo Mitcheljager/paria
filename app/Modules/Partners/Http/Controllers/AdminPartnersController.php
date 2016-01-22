@@ -2,7 +2,7 @@
 
 use ModelHandlerTrait;
 use App\Modules\Partners\Partner;
-use HTML, Hover, BackController;
+use Hover, BackController;
 
 class AdminPartnersController extends BackController {
 
@@ -23,7 +23,6 @@ class AdminPartnersController extends BackController {
             'buttons'   => ['new', 'category'],
             'tableHead' => [
                 trans('app.id')             => 'id', 
-                trans('app.published')      => 'published', 
                 trans('app.title')          => 'title',
                 trans('app.category')       => 'partnercat_id', 
             ],
@@ -33,7 +32,6 @@ class AdminPartnersController extends BackController {
 
                 return [
                     $partner->id,
-                    raw($partner->published ? HTML::fontIcon('check') : null),
                     raw(Hover::pull(), $partner->title),
                     $partner->partnercat->title,
                 ];            

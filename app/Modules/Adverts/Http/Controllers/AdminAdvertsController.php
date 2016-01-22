@@ -2,7 +2,7 @@
 
 use App\Modules\Adverts\Advert;
 use ModelHandlerTrait;
-use HTML, Hover, BackController;
+use Hover, BackController;
 
 class AdminAdvertsController extends BackController {
 
@@ -22,8 +22,7 @@ class AdminAdvertsController extends BackController {
         $this->indexPage([
             'buttons'   => ['new', 'category'],
             'tableHead' => [
-                trans('app.id')             => 'id',
-                trans('app.published')      => 'published', 
+                trans('app.id')             => 'id', 
                 trans('app.title')          => 'title',
                 trans('app.category')       => 'advertcat_id', 
             ],
@@ -33,7 +32,6 @@ class AdminAdvertsController extends BackController {
 
                 return [
                     $advert->id,
-                    raw($advert->published ? HTML::fontIcon('check') : null),
                     raw(Hover::pull(), $advert->title),
                     $advert->advertcat->title,
                 ];            

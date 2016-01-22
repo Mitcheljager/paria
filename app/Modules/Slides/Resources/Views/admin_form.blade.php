@@ -9,11 +9,7 @@
     
     {!! Form::smartSelectRelation('slidecat', 'Slide '.trans('app.category'), $modelClass, null) !!}
 
-    {!! Form::smartUrl() !!}
-
-    {!! Form::smartNumeric('position', trans('app.position'), 0) !!}
-
-    {!! Form::smartCheckbox('published', trans('app.published'), true) !!}
+    {!! Form::smartUrl('url', trans('app.url')) !!}
 
     {!! Form::smartImageFile('image', trans('app.image')) !!}
         

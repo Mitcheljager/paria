@@ -11,7 +11,7 @@
 
     {!! Form::smartSelectRelation('country', trans('app.object_country'), $modelClass) !!}
 
-    {!! Form::smartUrl() !!}
+    {!! Form::smartText('url', trans('app.url')) !!}
 
     {!! Form::smartText('lineup', trans('opponents::lineup')) !!}
 

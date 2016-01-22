@@ -21,11 +21,10 @@ class AdminServersController extends BackController {
     {
         $this->indexPage([
             'tableHead' => [
-                trans('app.id')             => 'id', 
-                trans('app.published')      => 'published', 
-                trans('app.object_game')    => 'game_id', 
-                trans('app.title')          => 'title',
-                trans('app.ip')             => 'ip',
+                trans('app.id')     => 'id', 
+                'Game'              => 'game_id', 
+                trans('app.title')  => 'title',
+                trans('app.ip')     => 'ip',
             ],
             'tableRow' => function($server)
             {
@@ -35,7 +34,6 @@ class AdminServersController extends BackController {
 
                 return [
                     $server->id,
-                    raw($server->published ? HTML::fontIcon('check') : null),
                     raw($gameIcon),
                     raw(Hover::modelAttributes($server, ['creator'])->pull().HTML::link('servers', $server->title)),
                     $server->ip,

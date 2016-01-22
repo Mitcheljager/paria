@@ -6,29 +6,31 @@
 [![Source](http://img.shields.io/badge/source-Contentify/Contentify-blue.svg?style=flat-square)](https://github.com/Contentify/Contentify)
 [![License](http://img.shields.io/badge/license-MIT-brightgreen.svg?style=flat-square)](https://tldrlegal.com/license/mit-license)
 
-Contentify is an eSports CMS based on the popular Laravel 5.1 framework. Build your team website with a modern CMS.
+Contentify is an eSports CMS based on the popular Laravel 5.1 framework.
 
 Website: [contentify.org](http://contentify.org/)
 
-### Clone Repository
+> WARNING: This is a release candidate version. It does include all features but it is not ready for production.
 
-Clone this repository (`master` branch) via git. Via console, switch to the Contentify directory and run `php composer.phar install`. Then follow the instructions in the [wiki](https://github.com/Contentify/Contentify/wiki/Installation).
+> WARNING: This repository does include multiple branches, but currently none of them is a release branch. Therefore, if you are interested in testing, please download a realease that is meant for testing.
 
-### Download
+### Releases
 
-Download it here: [contentify.org/share/releases/contentify_1_1_0.zip](http://contentify.org/share/releases/contentify_1_1_0.zip)
+The current release is `Release Candidate`.
+
+You may download it here: [contentify.org/share/releases/contentify_rc.zip](http://contentify.org/share/releases/contentify_rc.zip)
 
 To install Contentify please follow the instructions in the [wiki](https://github.com/Contentify/Contentify/wiki/Installation).
 
 ### Demo
 
-* URL: [demo.contentify.org](http://demo.contentify.org/)
+> IMPORTANT NOTE: The demo server currently does not have the latest build and therefore does not represent the git master branch!
+
+* URL: http://46.101.143.161/
 * Email: `demo@contentify.org`
 * Password: `demodemo`
 
 > The server resets (database, uploaded files and cache) twice per hour.
-
-You may download the demo website project here: [contentify.org/share/contentify_demo.zip](http://www.contentify.org/share/contentify_demo.zip)
 
 ### Contribution
 

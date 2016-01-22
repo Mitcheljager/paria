@@ -9,8 +9,6 @@
 
     {!! Form::smartText('short', trans('app.short_title')) !!}
 
-    {!! Form::smartUrl() !!}
-
     {!! Form::smartIconFile() !!}
 
     {!! Form::actions() !!}
