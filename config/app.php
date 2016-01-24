@@ -24,7 +24,7 @@ return [
     |
     */
 
-    'title' => 'Contentify Demo',
+    'title' => 'Team Paria',
 
     /*
     |--------------------------------------------------------------------------
@@ -48,7 +48,7 @@ return [
     |
     */
 
-    'url' => 'http://localhost/contentify',
+    'url' => 'contentify.dev',
 
     /*
     |--------------------------------------------------------------------------
@@ -61,7 +61,7 @@ return [
 
     'frontItemsPerPage' => 10,
     'adminItemsPerPage' => 10,
-    
+
     /*
     |--------------------------------------------------------------------------
     | Application Timezone
@@ -257,7 +257,7 @@ return [
 
         /*
          * CMS classes:
-         */ 
+         */
         'FormGenerator'         => 'Contentify\FormGenerator',
         'ModuleInstaller'       => 'Contentify\ModuleInstaller',
         'MsgException'          => 'Contentify\MsgException',
@@ -287,7 +287,7 @@ return [
 
         /*
          * Vendor classes:
-         */       
+         */
         'OpenGraph'             => 'ChrisKonnertz\OpenGraph\OpenGraph',
         'BBCode'                => 'ChrisKonnertz\BBCode\BBCode',
         'Jobs'                  => 'ChrisKonnertz\Jobs\JobsFacade',

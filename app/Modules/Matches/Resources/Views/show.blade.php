@@ -4,11 +4,11 @@
     <div class="left">
         <img src="{!! asset('img/logo_180.png') !!}" alt="{{ $match->left_team->title }}">
         <div class="team-name">
-            <img src="{{ asset('uploads/countries/eu.png') }}"> 
+            <img src="{{ asset('uploads/countries/eu.png') }}">
             {{ $match->left_team->title }}
         </div>
     </div>
-    <div class="mid">
+    <div class="mid"> 
         {!! $match->scoreCode() !!}
     </div>
     <div class="right">
@@ -22,7 +22,7 @@
                 <img src="{{ $match->right_team->country->uploadPath().$match->right_team->country->icon }}">
             @endif
             {{ $match->right_team->title }}
-        </div> 
+        </div>
     </div>
 </div>
 <div class="details">

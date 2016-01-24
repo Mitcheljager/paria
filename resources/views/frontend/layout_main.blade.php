@@ -26,8 +26,12 @@
     <link rel="shortcut icon" type="picture/x-icon" href="{!! asset('favicon.png') !!}">
     <link rel="alternate" type="application/rss+xml" title="RSS News" href="{!! asset('rss/news.xml') !!}">
 
+    <link href='http://fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,700italic,800italic,400,600,700,800,300|Amatic+SC:400,700' rel='stylesheet' type='text/css'>
+
     {!! HTML::style('vendor/font-awesome/css/font-awesome.min.css') !!}
     {!! HTML::style('css/frontend.css') !!}
+    {!! HTML::style('css/style.css') !!}
+
 
     {!! HTML::jsTranslations() !!}
     <!--[if lt IE 9]>
@@ -37,9 +41,44 @@
     {!! HTML::script('vendor/jquery/jquery-1.11.3.min.js') !!}
     {!! HTML::script('https://maxcdn.bootstrapcdn.com/bootstrap/3.3.1/js/bootstrap.min.js') !!}
     {!! HTML::script('vendor/contentify/contentify.js') !!}
-    {!! HTML::script('vendor/contentify/frontend.js') !!}    
+    {!! HTML::script('vendor/contentify/frontend.js') !!}
 </head>
 <body>
+  <div class="header">
+    <div class="wrapper">
+
+      <div class="login">
+        Login
+        <input type="text" class="usernameInput" placeholder="Username" />
+        <input type="password" class="passwordInput" placeholder="Password" />
+        New User? <a href="#" class="signupLink">Register here!</a>
+
+        @widget('Auth::Login')
+      </div>
+
+      <div class="sponsors">
+        <img src="/img/budgetSlotsLogo.png" />
+        <img src="/img/surgeNetworkLogo.png" />
+      </div>
+
+      <div class="logo">
+        <a href="#">{!! HTML::image(asset('/img/teamPariaLogo.png')) !!}</a>
+      </div>
+
+      <a href="#" class="mobileMenuSelector">Menu</a>
+
+      <ul class="nav">
+        <li class="navItem">{!! link_to('/', trans('app.home'), ['class' => 'active']) !!}</li>
+        <li class="navItem">{!! link_to('teams', trans('app.object_teams')) !!}</li>
+        <li class="navItem">{!! link_to('partners', trans('app.object_partners')) !!}</li>
+        <li class="navItem">{!! link_to('matches', trans('app.object_matches')) !!}</li>
+        <li class="navItem">{!! link_to('streams', trans('app.object_streams')) !!}</li>
+        <li class="navItem">{!! link_to('videos', trans('app.object_videos')) !!}</li>
+        <li class="navItem">{!! link_to('forums', trans('app.object_forums')) !!}</li>
+      </ul>
+
+    </div>
+  </div>
     <header id="header">
         <div class="container">
             <div class="top-bar">
@@ -83,7 +122,7 @@
                 @endif
 
                 <!-- Render JavaScript alerts here -->
-                <div class="alert-area"></div>                
+                <div class="alert-area"></div>
 
                 <section class="page page-{!! strtolower($controllerName) !!} {!! $templateClass !!}">
                     @if (isset($page))
@@ -100,7 +139,7 @@
                     </h3>
                     @widget('Partners::Partners')
 
-                    <br>    
+                    <br>
                     <h3>
                         {{ trans('app.latest') }} {{ trans('app.object_matches') }}
                         <a href="{{ url('matches') }}" title="{{ trans('app.read_more') }}">{!! HTML::fontIcon('plus') !!}</a>
@@ -124,7 +163,7 @@
                     <ul class="list-inline">
                         <li class="icon">{!! HTML::fontIcon('bars') !!}</li>
                         <li>{!! link_to('/', trans('app.home'), ['class' => 'active']) !!}</li>
-                        
+
                         <li>{!! link_to('search', trans('app.object_search')) !!}</li>
                         <li>{!! link_to('servers', trans('app.object_servers')) !!}</li>
                         <li>{!! link_to('galleries', trans('app.object_galleries')) !!}</li>
@@ -152,7 +191,7 @@
             </div>
         </div>
     </footer>
-    
+
     {!! Config::get('app.analytics') !!}
 </body>
 </html>

@@ -11,8 +11,8 @@
                 @if ($video->provider == 'vimeo')
                     <div></div>
                     <script>
-                        $.getJSON('http://vimeo.com/api/v2/video/' + {{ $video->permanent_id }} + '.json?callback=?', 
-                        function(data) 
+                        $.getJSON('http://vimeo.com/api/v2/video/' + {{ $video->permanent_id }} + '.json?callback=?',
+                        function(data)
                         {
                                 var image = data[0].thumbnail_medium;
                                 var $el = $('.page .videos [data-id=' + {{ $video->id }} + '] div');
