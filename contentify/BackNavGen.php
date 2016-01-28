@@ -27,7 +27,7 @@ class BackNavGen {
 
     /**
      * Returns the navigation items
-     * 
+     *
      * @return array Array with arrays of navi items
      */
     public function getItems()
@@ -101,11 +101,11 @@ class BackNavGen {
             $navItems = $this->getItems();
             $navCategories = array();
 
-            for ($i = 1; $i <= self::MAX_NAVCATS; $i++) { 
+            for ($i = 1; $i <= self::MAX_NAVCATS; $i++) {
                 foreach ($navItems as $navItem) {
                     if ($navItem['category'] == $i) {
-                        $navCategories[$i][$navItem['position']] = $navItem;    
-                    }               
+                        $navCategories[$i][$navItem['position']] = $navItem;
+                    }
                 }
 
                 ksort($navCategories[$i]); // Sort category array to bring positions in the right order
@@ -118,7 +118,7 @@ class BackNavGen {
 
     /**
      * Enforce (cache) update
-     * 
+     *
      * @return void
      */
     public function update()
@@ -128,7 +128,7 @@ class BackNavGen {
 
     /**
      * Returns the HTML code of the backend navigation
-     * 
+     *
      * @return string The code
      */
     public function get()

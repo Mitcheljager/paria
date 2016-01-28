@@ -2,7 +2,7 @@ $(document).ready(function()
 {
 	var navKey = 'navIndex';
 	var navIndex= sessionStorage.getItem(navKey);
-	var $nav = $('#header nav');	
+	var $nav = $('#header nav');
 
 	if (typeof navIndex === 'undefined') {
 		navIndex = 0;
@@ -18,8 +18,7 @@ $(document).ready(function()
 		sessionStorage.setItem(navKey, $(this).parent().index() - 1); // -1 because of icon li
 	});
 
-	$('#header nav .icon').click(function(event)
-	{
-		$nav.toggleClass('max');
-	})
+	$(".mobileMenuSelector").on('click', function() {
+    $(".nav").stop().slideToggle(200);
+  });
 });

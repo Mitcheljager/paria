@@ -48,11 +48,6 @@
     <div class="wrapper">
 
       <div class="login">
-        Login
-        <input type="text" class="usernameInput" placeholder="Username" />
-        <input type="password" class="passwordInput" placeholder="Password" />
-        New User? <a href="#" class="signupLink">Register here!</a>
-
         @widget('Auth::Login')
       </div>
 
@@ -62,7 +57,7 @@
       </div>
 
       <div class="logo">
-        <a href="#">{!! HTML::image(asset('/img/teamPariaLogo.png')) !!}</a>
+        <a href="{!! route('home') !!}">{!! HTML::image(asset('/img/teamPariaLogo.png')) !!}</a>
       </div>
 
       <a href="#" class="mobileMenuSelector">Menu</a>
@@ -74,44 +69,10 @@
         <li class="navItem">{!! link_to('matches', trans('app.object_matches')) !!}</li>
         <li class="navItem">{!! link_to('streams', trans('app.object_streams')) !!}</li>
         <li class="navItem">{!! link_to('videos', trans('app.object_videos')) !!}</li>
-        <li class="navItem">{!! link_to('forums', trans('app.object_forums')) !!}</li>
       </ul>
 
     </div>
   </div>
-    <header id="header">
-        <div class="container">
-            <div class="top-bar">
-                <a class="header-logo" href="{!! route('home') !!}">
-                    {!! HTML::image(asset('img/header_logo.png')) !!}
-                </a>
-                <div class="right">
-                    @widget('Auth::Login')
-                </div>
-            </div>
-        </div>
-        <nav>
-            <div class="container">
-                <ul>
-                    <li class="icon">{!! HTML::fontIcon('bars') !!}</li>
-                    <li>{!! link_to('/', trans('app.home'), ['class' => 'active']) !!}</li>
-                    <li>{!! link_to('teams', trans('app.object_teams')) !!}</li>
-                    <li>{!! link_to('partners', trans('app.object_partners')) !!}</li>
-                    <li>{!! link_to('matches', trans('app.object_matches')) !!}</li>
-                    <li>{!! link_to('streams', trans('app.object_streams')) !!}</li>
-                    <li>{!! link_to('videos', trans('app.object_videos')) !!}</li>
-                    <li>{!! link_to('forums', trans('app.object_forums')) !!}</li>
-                </ul>
-                <div class="right">
-                    <a href="https://www.facebook.com/contentifycms" target="_blank">{!! HTML::fontIcon('facebook') !!}</a>
-                    <a href="https://twitter.com/ContentifyCMS" target="_blank">{!! HTML::fontIcon('twitter') !!}</a>
-                    <a href="https://www.youtube.com/channel/UC2gIIZzySdgxrQ3jM4jmoqQ" target="_blank">{!! HTML::fontIcon('youtube') !!}</a>
-                </div>
-            </div>
-        </nav>
-    </header>
-
-    @widget('Slides::Slides', ['categoryId' => 1])
 
     <div class="divider"></div>
     <div class="container">
@@ -156,41 +117,25 @@
             </aside>
         </div>
     </div>
-    <footer id="footer">
-        <div class="links">
-            <div class="container">
-                <nav>
-                    <ul class="list-inline">
-                        <li class="icon">{!! HTML::fontIcon('bars') !!}</li>
-                        <li>{!! link_to('/', trans('app.home'), ['class' => 'active']) !!}</li>
 
-                        <li>{!! link_to('search', trans('app.object_search')) !!}</li>
-                        <li>{!! link_to('servers', trans('app.object_servers')) !!}</li>
-                        <li>{!! link_to('galleries', trans('app.object_galleries')) !!}</li>
-                        <li>{!! link_to('awards', trans('app.object_awards')) !!}</li>
-                        <li>{!! link_to('events', trans('app.object_events')) !!}</li>
-                        <li>{!! link_to('downloads', trans('app.object_downloads')) !!}</li>
-                        <li>{!! link_to('contact', trans('app.object_contact')) !!}</li>
-                        <li>{!! link_to('impressum', 'Impressum') !!}</li>
-                    </ul>
-                </nav>
-            </div>
-        </div>
-        <div class="more">
-            <div class="container">
-                <span class="info">&copy; {{ date('Y') }} by <a class="cms" href="http://www.contentify.org" target="_blank">Contentify.org</a></span>
+    <div class="footer">
+      <div class="wrapper">
+        {!! HTML::image(asset('/img/teamPariaLogoFooter.png')) !!}
+        <span><b>Team Paria</b><br/>Copyright &copy; 2016 <br />All rights reserved.</span>
+        <ul class="footerNav">
+          <li>{!! link_to('/', trans('app.home'), ['class' => 'active']) !!}</li>
 
-                @widget('Visitors::Visitors')
-
-                <div class="right">
-                    <a href="https://www.facebook.com/contentifycms" target="_blank">{!! HTML::fontIcon('facebook') !!}</a>
-                    <a href="https://twitter.com/ContentifyCMS" target="_blank">{!! HTML::fontIcon('twitter') !!}</a>
-                    <a href="https://www.youtube.com/channel/UC2gIIZzySdgxrQ3jM4jmoqQ" target="_blank">{!! HTML::fontIcon('youtube') !!}</a>
-                </div>
-            </div>
-            </div>
-        </div>
-    </footer>
+          <li>{!! link_to('search', trans('app.object_search')) !!}</li>
+          <li>{!! link_to('servers', trans('app.object_servers')) !!}</li>
+          <li>{!! link_to('galleries', trans('app.object_galleries')) !!}</li>
+          <li>{!! link_to('awards', trans('app.object_awards')) !!}</li>
+          <li>{!! link_to('events', trans('app.object_events')) !!}</li>
+          <li>{!! link_to('downloads', trans('app.object_downloads')) !!}</li>
+          <li>{!! link_to('contact', trans('app.object_contact')) !!}</li>
+          <li>{!! link_to('impressum', 'Impressum') !!}</li>
+        </ul>
+      </div>
+    </div>
 
     {!! Config::get('app.analytics') !!}
 </body>

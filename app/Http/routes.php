@@ -13,7 +13,7 @@
 
 /*
  * Frontend dashboard.
- */ 
+ */
 if (! installed()) {
     Route::get('/', ['as' => 'home', 'uses' => function() {
         return Redirect::to('/install.php');
@@ -27,10 +27,10 @@ if (! installed()) {
  * We prefer to use a route here instead of inside the modules' own routing file.
  * So there can't exist multiple modules that try to declare themselves as dashboard.
  * (Well, ofcourse they may try to... since routing is global. But they should not.)
- */ 
+ */
 Route::get('admin', [
-    'as' => 'admin.dashboard', 
-    'before' => 'admin', 
+    'as' => 'admin.dashboard',
+    'before' => 'admin',
     'uses' => 'App\Modules\Dashboard\Http\Controllers\AdminDashboardController@getindex'
 ]);
 
@@ -112,7 +112,7 @@ Route::get('jobs', function()
  * Testing
  */
 Route::get('test', function()
-{ 
+{
     /*
     $controller = new InstallController();
     $controller->create('table', function($table)
